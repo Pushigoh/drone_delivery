@@ -1,7 +1,7 @@
 <?php
 session_start();
 	require_once("/storage/vendor/autoload.php");
-\EasyPost\EasyPost::setApiKey("EZTK88915930860f429da26a320e1c5e1c16YgDQlI8vXdqfV1xIAFZyCg");
+\EasyPost\EasyPost::setApiKey("KEY");
 
 if(isset($_POST['confirm']))
 {
