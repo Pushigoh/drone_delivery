@@ -10,19 +10,29 @@ if(isset($_POST['confirm']))
 }
 else
 {
-
+$fname = filter_var($_POST['fname'], FILTER_SANITIZE_STRING);
+$lname = filter_var($_POST['lname'], FILTER_SANITIZE_STRING);
+$street1 = filter_var($_POST['street1'], FILTER_SANITIZE_STRING);
+$street2 = filter_var($_POST['street2'], FILTER_SANITIZE_STRING);
+$city = filter_var($_POST['city'], FILTER_SANITIZE_STRING);
+$state= filter_var($_POST['state'], FILTER_SANITIZE_STRING);
+$zip= filter_var($_POST['zip'], FILTER_SANITIZE_STRING);
+$country= filter_var($_POST['country'], FILTER_SANITIZE_STRING);
+/*
 	$street1 = $_POST["street1"];
 	$street2 = $_POST["street2"];
 	$city = $_POST["city"];
 	$state = $_POST["state"];
 	$zip = $_POST["zip"];
 	$country = $_POST["country"];
+*/
 
-	$_SESSION['fname'] = $_POST["fname"];
-	$_SESSION['lname'] = $_POST["lname"];
+	$_SESSION['fname'] = $fname
+	$_SESSION['lname'] = $lname
 	$_SESSION['street1'] = $street1;
 	$_SESSION['street2'] = $street2;
 	$_SESSION['city'] = $city;
+	$_SESSION['state'] = $state;
 	$_SESSION['zip'] = $zip;
 	$_SESSION['country'] = $country;
 		
@@ -56,4 +66,3 @@ else
 #	echo "_________________\n"; //debug
 #	echo $output2["delivery"]["success"]; //debug
 ?>
-
